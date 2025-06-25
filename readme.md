@@ -12,14 +12,14 @@ Aplicación de escritorio construida con Electron y Flask para monitorear el est
 
 1. **Clona el repositorio**  
    ```sh
-   git clone 'https://github.com/MaikolCeaA/monitoreo_reportes_regulatorios.git'
+   git clone https://github.com/MaikolCeaA/monitoreo_reportes_regulatorios.git
    cd Monitoreo_reportes_regulatorios
    ```
 
 2. **Instala dependencias de Python**  
    ```sh
    cd backend
-   pip install flask flask-cors
+   pip install -r ../requirements.txt
    cd ..
    ```
 
@@ -47,7 +47,8 @@ Aplicación de escritorio construida con Electron y Flask para monitorear el est
 - `frontend/index.html`: Interfaz de usuario.
 - `index.js`: Inicializa la ventana de Electron y carga la app Flask.
 - `package.json`: Configuración de Node/Electron.
+- `requirements.txt`: Dependencias de Python para el backend.
 
 ## Uso
 
-La aplicación mostrará una ventana con la lista de reportes y su estado actual, obtenidos desde el backend Flask.
+La aplicación mostrará una ventana con la lista de reportes y su estado actual, obtenidos desde el
