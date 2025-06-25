@@ -12,7 +12,7 @@ Aplicación de escritorio construida con Electron y Flask para monitorear el est
 
 1. **Clona el repositorio**  
    ```sh
-   git clone <URL_DEL_REPOSITORIO>
+   git clone 'https://github.com/MaikolCeaA/monitoreo_reportes_regulatorios.git'
    cd Monitoreo_reportes_regulatorios
    ```
 
