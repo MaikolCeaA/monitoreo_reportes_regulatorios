@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head><title>Dashboard Reportes</title></head>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Reportes Regulatorios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <h1>Reportes Regulatorios</h1>
-  <ul id="lista"></ul>
+  <div class="container">
+    <div class="left-panel">
+      <img src="../images/BANNER_QIK.png" alt="Banner" />
+    </div>
+    <div class="right-panel">
+      <h2>Login</h2>
+      <input id="username" type="text" placeholder="Username">
+      <input id="password" type="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <button class="secondary" onclick="alert('Recuperación no implementada')">Forgot Password</button>
+      <button class="secondary" onclick="alert('Creación no implementada')">Create Account</button>
+    </div>
+  </div>
 
   <script>
-    fetch("/api/reportes")
-      .then(res => res.json())
-      .then(data => {
-        const lista = document.getElementById("lista");
-        data.forEach(r => {
-          const li = document.createElement("li");
-          li.textContent = `${r.nombre} - ${r.estado}`;
-          lista.appendChild(li);
-        });
-      });
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const valid = window.api.validarUsuario(user, pass);
+      if (valid) {
+        window.api.loginSuccess();
+      } else {
+        alert("Usuario o contraseña incorrectos.");
+      }
+    }
   </script>
 </body>
 </html>
