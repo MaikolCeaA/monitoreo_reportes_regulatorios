@@ -8,6 +8,8 @@
     --color-white: #fff;
     --color-info-dark: #7d8da1;
     --color-dark: #363949;
+    --color-blue-light: #0072CE;
+    --color-blue: #003865;
     --color-light: rgba(132, 139, 200, 0.18);
     --color-dark-variant: #677483;
     --color-background: #f6f6f9;
@@ -274,20 +276,38 @@ main .analyse svg circle{
     transform: translate(5px, 5px);
 }
 
-main .analyse .sales svg circle{
-    stroke: var(--color-success);
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-main .analyse .visits svg circle{
+main .analyse .pending svg circle{
     stroke: var(--color-danger);
     stroke-dashoffset: -30;
     stroke-dasharray: 200;
 }
 
-main .analyse .searches svg circle{
+main .analyse .sent svg circle{
     stroke: var(--color-primary);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .analyse .accepted svg circle{
+    stroke: var(--color-success);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .analyse .extend svg circle{
+    stroke: var(--color-blue-light);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .analyse .sanctions svg circle{
+    stroke: var(--color-blue-light);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .analyse .pending_extension svg circle{
+    stroke: var(--color-danger);
     stroke-dashoffset: -30;
     stroke-dasharray: 200;
 }
@@ -571,7 +591,7 @@ main .recent-orders a{
         width: 94%;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-40%);
         margin: 2rem 0 0 0.8rem;
     }
 
@@ -579,15 +599,6 @@ main .recent-orders a{
         width: 83vw;
     }
 
-    main table thead tr th:last-child,
-    main table thead tr th:first-child{
-        display: none;
-    }
-
-    main table tbody tr td:last-child,
-    main table tbody tr td:first-child{
-        display: none;
-    }
 
 }
 
@@ -654,8 +665,9 @@ main .recent-orders a{
 
     main .recent-orders{
         position: relative;
+        transform: translateX(-50%);
         margin: 3rem 0 0 0;
-        width: 100%;
+        width: 90%;
     }
 
     main .recent-orders table{
