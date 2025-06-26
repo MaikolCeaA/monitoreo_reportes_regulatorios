@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style-login.css">
+    <title>Monitoreo Reportes Regulatorios Qik | Login</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <span>Use your work email for registration</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <span>Use your work email and password</span>
+                <input type="email" placeholder="Email" id="email">
+                <input type="password" placeholder="Password" id="password">
+                <a href="#">Forgot Your Password?</a>
+                <button type="button" onclick="login()">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back Qiker!</h1>
+                    <p>Enter your work details to access the application</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Qiker!</h1>
+                    <p>Register with your work details and an admin will review your application</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login-script.js"></script>
+    <script>
+        function login() {
+            const user = document.getElementById("email").value.trim().toLowerCase();
+            const pass = document.getElementById("password").value;
+
+            if (!window.api) {
+            alert("API no disponible. Revisa preload.js o configuración.");
+            return;
+            }
+
+            const valid = window.api.validarUsuario(user, pass);
+
+            if (valid) {
+            console.log("Login válido");
+            window.api.loginSuccess();
+            } else {
+            alert("Usuario o contraseña incorrectos.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

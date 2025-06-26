@@ -2,27 +2,147 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard - Reportes</title>
-  <link rel="stylesheet" href="style_dashboard.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Reportes Regulatorios</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+  <link rel="stylesheet" href="style-dashboard.css">
 </head>
 <body>
-  <header>
-    <h1>Monitoreo de Reportes Regulatorios</h1>
-  </header>
-  <main>
-    <section class="card">
-      <h2>Bienvenido</h2>
-      <p>Este es el dashboard. Aquí se mostrarán los reportes.</p>
-    </section>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside>
+      <div class="toggle">
+        <div class="logo">
+          <img src="../images/Qik 280x280.ico" alt="Qik Logo">
+          <h2>Qik<span class="danger"></span></h2>
+        </div>
+      </div>
 
-    <section class="card">
-      <h3>Últimos Reportes</h3>
-      <ul>
-        <li>Reporte Diario SB - Enviado</li>
-        <li>Control Legal - Pendiente</li>
-        <li>Reunión Clientes - Aceptado</li>
-      </ul>
-    </section>
-  </main>
+      <div class="sidebar">
+        <a href="#" class="active">
+          <span class="material-icons-sharp">dashboard</span>
+          <h3>Dashboard</h3>
+        </a>
+        <a href="#">
+          <span class="material-icons-sharp">calendar_today</span>
+          <h3>Calendario</h3>
+        </a>
+        <a href="#">
+          <span class="material-icons-sharp">search</span>
+          <h3>Buscar</h3>
+        </a>
+        <a href="#">
+          <span class="material-icons-sharp">logout</span>
+          <h3>Salir</h3>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main>
+      <h1>Resumen Diario</h1>
+
+      <div class="analyse">
+        <div class="sales">
+          <div class="status">
+            <div class="info">
+              <h3>Pendientes</h3>
+              <h1>3</h1>
+            </div>
+            <div class="progresss">
+              <svg><circle cx="38" cy="38" r="36"></circle></svg>
+              <div class="percentage"><p>+25%</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visits">
+          <div class="status">
+            <div class="info">
+              <h3>Enviados</h3>
+              <h1>2</h1>
+            </div>
+            <div class="progresss">
+              <svg><circle cx="38" cy="38" r="36"></circle></svg>
+              <div class="percentage"><p>+10%</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="searches">
+          <div class="status">
+            <div class="info">
+              <h3>Aceptados</h3>
+              <h1>1</h1>
+            </div>
+            <div class="progresss">
+              <svg><circle cx="38" cy="38" r="36"></circle></svg>
+              <div class="percentage"><p>-5%</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Report Cards -->
+      <div class="recent-orders">
+        <h2>Reportes de Hoy</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Reporte</th>
+              <th>Fecha Límite</th>
+              <th>Responsable</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SB-001 - Reporte Diario</td>
+              <td>25/06/2025</td>
+              <td>Juan Pérez</td>
+              <td class="danger">Pendiente</td>
+            </tr>
+            <tr>
+              <td>SB-002 - Control Legal</td>
+              <td>25/06/2025</td>
+              <td>Claudia Gómez</td>
+              <td class="warning">Enviado</td>
+            </tr>
+            <tr>
+              <td>SB-003 - Reunión Clientes</td>
+              <td>25/06/2025</td>
+              <td>Edgar Ramírez</td>
+              <td class="success">Aceptado</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="#">Ver todos</a>
+      </div>
+    </main>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <div class="nav">
+        <button id="menu-btn">
+          <span class="material-icons-sharp">menu</span>
+        </button>
+        <div class="dark-mode">
+          <span class="material-icons-sharp active">light_mode</span>
+          <span class="material-icons-sharp">dark_mode</span>
+        </div>
+        <div class="profile">
+          <div class="info">
+            <p>Hola, <b>Juan</b></p>
+            <small class="text-muted">Admin</small>
+          </div>
+          <div class="profile-photo">
+            <img src="Images/Admin_profile_1.png" alt="admin">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
